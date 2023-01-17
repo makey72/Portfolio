@@ -1,0 +1,57 @@
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  @media screen and (max-width: 768px){
+    display: flex;
+  }
+}
+
+.burger-menu__line {
+  width: 35px;
+  height: 3px;
+  background: #fff;
+  transition: all .3s ease-in-out;
+}
+.burger-menu.open .burger-menu__line-1 {
+  transition:  cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+transform: rotate(-45deg) translate(-5px,11px);
+}
+.burger-menu.open .burger-menu__line-2 {
+opacity: 0;
+}
+.burger-menu.open .burger-menu__line-3 {
+  transition:  cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+  transform: rotate(45deg) translate(-5px, -11px);
+}
+
+.burger-menu__nav{
+  transform: translateY(-1000px);
+  visibility: hidden;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgba(27,27,27,.99);
+  box-shadow: 0px 3px 8px -5px rgba(251, 251, 251, 0.2);
+  transition: all .5s ease-in-out;
+  z-index: 4;
+}
+.burger-menu__nav.open{
+  transform: translateY(0);
+  visibility: visible;
+  display: flex;
+}
+
+.burger-menu__nav .nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.burger-menu__nav .nav__list .nav__item{
+  font-size: 21px;
+  padding: 25px 0;
+}

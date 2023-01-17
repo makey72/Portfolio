@@ -1,0 +1,80 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+    @media screen and(max-width: 768px){
+      display: none;
+    }
+  }
+
+  &__item-link {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 5px;
+    &:hover {
+      &::after{
+        width: 100%;
+        transition: cubic-bezier(0.39, 0.575, 0.565, 1) .3s all;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: $color;
+    }
+  }
+}
+.nav__item:nth-child(4){
+  animation-name: navAnim;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-timing-function: ease-in-out;
+}
+.nav__item:nth-child(3){
+  animation-name: navAnim;
+  animation-duration: 1s;
+  animation-delay: .6s;
+  animation-timing-function: ease-in-out;
+}
+.nav__item:nth-child(2){
+   animation-name: navAnim;
+  animation-duration: 1s;
+   animation-delay: .7s;
+  animation-timing-function: ease-in-out;
+ }
+.nav__item:nth-child(1){
+  animation-name: navAnim;
+  animation-duration: 1s;
+  animation-delay: .8s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes navAnim {
+  0%{
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

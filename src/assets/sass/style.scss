@@ -1,0 +1,117 @@
+@import "_vars";
+@import "_normalize";
+@import "_reset";
+
+
+/*Default style*/
+* {
+  cursor: none;
+  @media screen and (max-width: 1024px) {
+    cursor: default;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  color: $color;
+  background: $bg;
+  font-size: $fs;
+  margin: 0;
+  padding: 0;
+  scrollbar-color: #1f1f1f #fff;
+  scrollbar-width: thin;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  border: 1px solid #fff;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  max-width: $mw + px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-left: 1px solid #383838;
+  border-right: 1px solid #383838;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 33%;
+    width: 1px;
+    height: 100%;
+    background: #383838;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 33%;
+    width: 1px;
+    height: 100%;
+    background: #383838;
+    z-index: -1;
+  }
+}
+
+.container {
+  max-width: $mw + px;
+  margin: 0 auto;
+  width: 100%;
+  @media screen and(max-width: 1340px) {
+    padding: 0 10px;
+  }
+}
+
+.section__title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    text-align: center;
+  }
+
+}
+
+.section__subtitle {
+  font-size: 46px;
+  font-weight: 700;
+  margin-bottom: 44px;
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 34px;
+  }
+  @media screen and (max-width: 425px) {
+    font-size: 24px;
+  }
+}
+
+/* Blocks */
+@import "_nav";
+@import "_burger";
+@import "blocks/header";
+@import "blocks/banner";
+@import "blocks/about";
+@import "blocks/project";
+@import "blocks/feedback";
+@import "blocks/modal";
+@import "_slider";
+@import "blocks/reviews";
+@import "blocks/footer";
+@import "blocks/form";
+@import "blocks/cursor";

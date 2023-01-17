@@ -1,0 +1,122 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 620px;
+}
+.footer__form {
+  padding: 60px 0 57px 0;
+}
+.form__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 55px;
+  @media screen and(max-width: 768px){
+    font-size: 26px;
+    line-height: 45px;
+  }
+  @media screen and(max-width: 425px){
+    font-size: 21px;
+    line-height: 40px;
+  }
+}
+.form__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+}
+.form__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form__input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 14px;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  color: #fff;
+}
+.form__input::placeholder {
+  color: #fff;
+}
+.form__textarea {
+  height: 102px;
+  resize: none;
+}
+
+.form__btn {
+  z-index: 1;
+  color: #fff;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 83px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.form__sending {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("../img/vector/load.gif") center no-repeat;
+  background-size: 100px 100px;
+  background-color: rgba(30, 25, 25, 0.9);
+  z-index: 10;
+  &._load {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.form__success {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 50px;
+  background: #fff;
+  border-radius: 15px;
+  color: #000;
+  font-size: 18px;
+  z-index: 10;
+  &._success {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.form__err {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .1s ease-in;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 50px;
+  background: #fff;
+  border-radius: 15px;
+  color: #000;
+  font-size: 18px;
+  z-index: 10;
+  &._err {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+._rq-err {
+  border-bottom:1px solid rgba(234, 14, 14, 0.85);
+}

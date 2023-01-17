@@ -1,0 +1,73 @@
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #1378ef;
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1000;
+  transform: scale(1);
+  @media screen and (max-width: 1024px){
+    display: none;
+  }
+  &.active {
+    transform: scale(0);
+  }
+  &.active-btn {
+    transform: scale(0);
+  }
+  &.modal-btn {
+    transition: .3s ease-in background, cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(0.9);
+    background: rgba(19, 120, 239, 0.8);
+  }
+  &.input-active {
+    transition: .3s ease-in background, cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(0.9);
+    background: rgba(19, 120, 239, 0.8);
+  }
+}
+.cursor-follower {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #1378ef;
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(1);
+  z-index: 1000;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) .2s transform;
+  @media screen and (max-width: 1024px){
+    display: none;
+  }
+  &.active {
+    transition: .3s cubic-bezier(0.75, -0.27, 0.3, 1.33) background, cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(2);
+    background: #1378ef;
+    z-index: 0;
+  }
+  &.active-btn {
+    transition: .3s cubic-bezier(0.75, -0.27, 0.3, 1.33) background, cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(2);
+    background: #1378ef;
+    z-index: 2;
+  }
+  &.modal-btn {
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(0);
+
+  }
+  &.input-active {
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(0);
+  }
+
+  &.button {
+    border: none;
+    transition: .3s cubic-bezier(0.75, -0.27, 0.3, 1.33) background, cubic-bezier(0.39, 0.575, 0.565, 1) .3s transform;
+    transform: scale(2);
+    background: rgba(31, 31, 31, 0.7);
+  }
+}

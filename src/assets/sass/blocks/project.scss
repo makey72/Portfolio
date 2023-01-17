@@ -1,0 +1,142 @@
+.project {
+  margin-bottom: 150px;
+  transition: 1s ease;
+  opacity: 0;
+  transform: translateX(2000px);
+}
+
+.project.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project__accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.project__items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px 50px;
+  margin-bottom: 35px;
+  @media screen and(max-width: 768px) {
+    gap: 20px 30px;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+}
+
+.project__item {
+  position: relative;
+  font-size: 22px;
+  font-weight: 400;
+  transform: translateX(0);
+  transition: all .1s linear;
+  @media screen and(max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.project__item:before {
+  position: absolute;
+  content: '';
+  bottom: -10px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+}
+
+.project__item.active:before {
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) .3s all;
+  width: 100%;
+}
+
+.project__blog {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  @media screen and(max-width: 768px) {
+    gap: 30px;
+  }
+}
+
+.project__blogs {
+  position: relative;
+}
+
+.project__blog {
+  display: none;
+}
+
+.project__blog.show {
+  display: flex;
+
+}
+
+.project__blog-title {
+  font-size: 28px;
+  font-weight: 700;
+  max-width: 190px;
+  width: 100%;
+  @media screen and(max-width: 768px) {
+    display: none;
+  }
+}
+
+.project__blog-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  max-width: 960px;
+  width: 100%;
+}
+.project__blog-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project__blog-item-title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project__blog-item-title {
+  font-size: 28px;
+  font-weight: 700;
+  @media screen and(max-width: 768px) {
+    font-size: 21px;
+  }
+}
+
+.project__blog-item-description {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity .5s ease;
+}
+
+.project__blog-item.active .project__blog-item-description {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.project__blog-item.active .project__blog-item-title {
+
+}
+
+.project__blog-item svg {
+  transition: all .1s ease-in-out;
+
+}
+
+.project__blog-item.active svg {
+  transition: all .1s ease-in-out;
+  transform: rotate(-90deg);
+}

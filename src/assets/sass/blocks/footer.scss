@@ -1,0 +1,28 @@
+.footer {
+  background: url('../img/footer-bg.png') #121212;
+  background-repeat: no-repeat;
+  background-size: 973px 100%;
+  position: relative;
+  @media screen and(max-width: 1366px) {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+}
+
+.footer__form {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  @media screen and(max-width: 768px) {
+    justify-content: center;
+  }
+}

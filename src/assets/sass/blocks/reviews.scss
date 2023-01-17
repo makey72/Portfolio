@@ -1,0 +1,11 @@
+.reviews {
+  margin-bottom: 200px;
+  opacity: 0;
+  transition: 1s ease;
+}
+.reviews.show {
+  opacity: 1;
+}
+.reviews__subtitle {
+  margin-bottom: 90px;
+}
